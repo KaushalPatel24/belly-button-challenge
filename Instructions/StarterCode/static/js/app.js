@@ -1,5 +1,5 @@
 function buildMetadata(sample){
-  d3.json("samples.json").then(function(data){
+  d3.json("../data/samples.json").then(function(data){
        metadata = data.metadata;
        resultsArray = metadata.filter(function(data){
           return data.id == sample;
@@ -14,12 +14,11 @@ function buildMetadata(sample){
           PANEL.append("h6").text(`${key.toUpperCase()}: ${value}`);
       })
 
-      
   })
 }
 
 function buildCharts(sample){
-  d3.json("samples.json").then(function(data){
+  d3.json("../data/samples.json").then(function(data){
           samples = data.samples;
           resultsArray = samples.filter(function(data){
           return data.id === sample;
@@ -87,7 +86,7 @@ function init(){
       selector = d3.select("#selDataset")
   console.log(selector);
   
-  d3.json("samples.json").then(function(data){
+  d3.json("../data/samples.json").then(function(data){
       console.log(data);
           sampleNames = data.names;
 
